@@ -1,16 +1,18 @@
 <?php
-include('database.php');
+  include('database.php');
 
-if (isset($_POST['id']))
- {
- $id= $_POST['id'];
- $nom= $_POST['nom'];
- $des= $_POST['des'];
- $query = "UPDATE tareas SET nom = '$nom', des='$des' WHERE id='$id'";
- $result=mysqli_query($connection,$query);
- if (!$result){
-   die('Query Failed.');
-   }
- echo 'Tarea actualizada con exito';
- }
+  if (isset($_POST['id'])) {
+    $entidad = $_POST['entidad'];
+    $appat = $_POST['appat'];
+    $apmat = $_POST['apmat'];
+    $nombre = $_POST['nombre'];
+    $fregis = $_POST['fregis'];
+    
+    $query = "UPDATE registro SET entidad = '$entidad', appat = '$appat', apmat = '$apmat', nombre = '$nombre', fregis = '$fregis' WHERE id = '$id'";
+    $result=mysqli_query($connection,$query);
+    if (!$result) {
+      die('Query Failed.');
+    }
+    echo 'Tarea actualizada con exito';
+  }
 ?>

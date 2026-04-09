@@ -3,7 +3,7 @@ $connection = mysqli_connect(
     'localhost',
     'root',
     '',
-    'TareasAp'
+    'tasks-app'
 );
 //if ($connection)
 //echo "Database is connected";
