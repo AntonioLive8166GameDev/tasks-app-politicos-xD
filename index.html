@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Tareas Ap</title>
+</head>
+<body>
+  <br>
+  <div align="center">
+    <form>
+      <table border=1>
+        <tr>
+          <td> TAREAS AP </td>
+          <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+          <td>BUSCAR: <input type="search" id="busx"></td>
+        </tr>
+      </table>
+    </form>
+    <hr>
+    <br>
+    <div id="tarea-result">
+      <table id="contenedor" border=1>
+        
+      </table>
+    </div>
+    <br>
+    <form id="tareas-forma">
+      <input type="hidden" id="tareaId">
+      &nbsp;&nbsp;&nbsp;TAREA: <input type="text" id="nom" placeholder="Nombre"> <br>
+      &nbsp;&nbsp;&nbsp;<textarea id="des" cols="30" rows="10" placeholder="Descripcion"></textarea>
+      <br>
+      <button type="submit"> Guardar...</button> <br><br>
+    </form>
+    <table border=1>
+      <thead>
+          <tr>
+            <th> ID </th> <th> Nombre </th>  <th> Descripcion </th> <th> jasja </th> 
+          </tr>
+      </thead>
+      <tbody id="tareas">
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
