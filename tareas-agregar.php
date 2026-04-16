@@ -15,5 +15,7 @@
       die('Query Failed.');
       }
     echo 'Tarea agregada exitosamente';  
+  } else {
+    echo 'Tarea no agregada: Hay campos obligatorios vacíos.'
   }
 ?>

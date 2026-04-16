@@ -2,15 +2,15 @@
 <html lang='en'>
 <head>
   <meta charset='UTF-8'>
-  <title>Tareas Ap</title>
+  <title>Politics :v</title>
 </head>
-<body>
+<body bgcolor="BLACK" style="color:WHITE">
   <br>
   <div align="center">
     <form>
       <table border=1>
         <tr>
-          <td> TAREAS AP </td>
+          <td> Registro de Afiliados </td>
           <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
           <td>BUSCAR: <input type="search" id="busx"></td>
       
@@ -27,15 +27,34 @@
     <br>
     <form id="tareas-forma">
       <input type="hidden" id="tareaId">
-      &nbsp;&nbsp;&nbsp;TAREA: <input type="text" id="nom" placeholder="Nombre"> <br>
-      &nbsp;&nbsp;&nbsp;<textarea id="des" cols="30" rows="10" placeholder="Descripcion"></textarea>
-      <br>
-      <button type="submit"> Guardar...</button> <br><br>
+      <table>
+        <tr>
+          <td>Entidad:</td>
+          <td><input type="text" id="entidad" placeholder="JALISCO"></td>
+        </tr>
+        <tr>
+          <td>Apellido paterno:</td>
+          <td><input type="text" id="appat" placeholder="MENDOZA"></td>
+        </tr>
+        <tr>
+          <td>Apellido materno:</td>
+          <td><input type="text" id="apmat" placeholder="DURAN"></td>
+        </tr>
+        <tr>
+          <td>Nombre(s):</td>
+          <td><input type="text" id="nombre" placeholder="LILIANA BERENICE"></td>
+        </tr>
+        <tr>
+          <td>Fecha de registro:</td>
+          <td><input type="date" id="fregis"></td>
+        </tr>
+      </table>  
+      <button type="submit">Guardar</button><br><br>
     </form>
     <table border=1>
       <thead>
           <tr>
-            <th> ID </th> <th> Nombre </th>  <th> Descripcion </th> 
+            <th> ID </th> <th> Entidad </th>  <th> Apellido paterno </th> <th> Apellido materno </th> <th> Nombre(s) </th> <th> Fecha de registro </th>
           </tr>
       </thead>
       <tbody id="tareas">
