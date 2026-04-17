@@ -92,12 +92,10 @@ $(document).ready(function()
           template +=`
             <tr tareaId="${task.id}">
               <td >${task.id}</td>
-              <td>
-              <a href='#' class="task-item">${task.entidad}  </a>
-              </td>
+              <td>${task.entidad}</td>
               <td>${task.appat}</td>
               <td>${task.apmat}</td>
-              <td>${task.nombre}</td>
+              <td><a href='#' class="task-item">${task.nombre}</a></td>
               <td>${task.fregis}</td>
               <td>
                 <button class="task-delete">
