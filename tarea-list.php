@@ -1,6 +1,6 @@
 <?php
   include('database.php');
-  $query="SELECT * FROM registro";
+  $query="SELECT * FROM registro ORDER BY id";
   $result=mysqli_query($connection,$query);
   if (!$result) {
     die('Query Error '.mysqli_error($connection));    

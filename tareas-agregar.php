@@ -9,13 +9,13 @@
 
     // TODO: Check if registro is valid instead of
     // registro(headers).
-    $query = "INSERT INTO registro VALUES ('$entidad','$appat', '$apmat', '$nombre', '$fregis')";
-    $result=mysqli_query($connection,$query);
+    $query = "INSERT INTO registro(entidad, appat, apmat, nombre, fregis) VALUES ('$entidad','$appat', '$apmat', '$nombre', '$fregis')";
+    $result = mysqli_query($connection, $query);
     if (!$result){
       die('Query Failed.');
-      }
+    }
     echo 'Tarea agregada exitosamente';  
   } else {
-    echo 'Tarea no agregada: Hay campos obligatorios vacíos.'
+    echo 'Tarea no agregada: Hay campos obligatorios vacíos.';
   }
 ?>

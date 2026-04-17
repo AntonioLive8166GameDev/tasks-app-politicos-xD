@@ -3,7 +3,7 @@
   $search = $_POST['busx'];
 
   if (!empty($search)) {
-    $query="SELECT * FROM registro WHERE nombre LIKE '$search%'";
+    $query="SELECT * FROM registro WHERE nombre LIKE '$search%' ORDER BY id";
 
     $result=mysqli_query($connection,$query);
     if (!$result) {

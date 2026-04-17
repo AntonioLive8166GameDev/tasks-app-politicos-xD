@@ -21,7 +21,14 @@ $(document).ready(function()
           let tasks = JSON.parse(response);
           let template = '';
           tasks.forEach(
-            task => {template += `<tr><td> ${task.nombre}</td></tr>`;}
+            task => {template += `
+              <tr tareaId="${task.id}">
+                <td >${task.id}</td>
+                <td>${task.appat}</td>
+                <td>${task.apmat}</td>
+                <td><a href='#' class="task-item">${task.nombre}</a></td>
+              </tr>
+            `;}
           );
           $('#contenedor').html(template);
           $('#tarea-result').show();
@@ -47,7 +54,7 @@ $(document).ready(function()
       console.log(response);
       TraerTareas();
       $('#tareas-forma').trigger('reset');
-      edit= false;
+      edit = false;
     });
     e.preventDefault(); 
   });
@@ -63,7 +70,7 @@ $(document).ready(function()
  
   // Dar clic en alguna de las tareas
   $(document).on('click','.task-item',function (){
-    let element=$(this)[0].parentElement.parentElement;
+    let element = $(this)[0].parentElement.parentElement;
     let id = $(element).attr("tareaId");
     
     $.post('tarea-simple.php',{id},function(response){
