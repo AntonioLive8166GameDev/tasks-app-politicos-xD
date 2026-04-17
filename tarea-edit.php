@@ -1,7 +1,8 @@
 <?php
   include('database.php');
 
-  if (isset($_POST['id'])) {
+  if (isset($_POST['id'], $_POST['entidad'], $_POST['appat'], $_POST['apmat'], $_POST['nombre'], $_POST['fregis'])) {
+    $id = $_POST['id'];
     $entidad = $_POST['entidad'];
     $appat = $_POST['appat'];
     $apmat = $_POST['apmat'];
