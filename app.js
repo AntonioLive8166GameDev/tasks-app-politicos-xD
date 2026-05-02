@@ -37,6 +37,8 @@ $(document).ready(function()
           $('#tarea-result').show();
         }
       })
+    } else {
+      $('#tarea-result').hide();
     }
   })
   
@@ -61,8 +63,8 @@ $(document).ready(function()
     });
     e.preventDefault(); 
   });
- // Borar tareas
- 
+
+ // Borar tareas 
   $(document).on('click','.task-delete',function (){
     let element=$(this)[0].parentElement.parentElement;
     let id=$(element).attr("tareaId");
@@ -105,14 +107,14 @@ $(document).ready(function()
         // Actualizar mostrador de página dinámicamente.
         $('#page').html(`<center><button id="prev-page">Anterior</button> Pag. ${data.currentPage}/${data.totalPages} <button id="next-page">Siguiente</button></center>`);
         
-        // Deshabilitar botón anterior si estamos en página 1
+        // Deshabilitar botón anterior si estamos en página 1.
         if (data.currentPage === 1) {
           $('#prev-page').prop('disabled', true);
         } else {
           $('#prev-page').prop('disabled', false);
         }
         
-        // Deshabilitar botón siguiente si estamos en última página
+        // Deshabilitar botón siguiente si estamos en última página.
         if (data.currentPage === data.totalPages) {
           $('#next-page').prop('disabled', true);
         } else {
