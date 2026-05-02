@@ -1,9 +1,10 @@
 <?php
   include('database.php');
   $search = $_POST['busx'];
+  $maxRecords = 10;
 
   if (!empty($search)) {
-    $query="SELECT * FROM registro WHERE nombre LIKE '$search%' ORDER BY id";
+    $query="SELECT * FROM registro WHERE nombre LIKE '$search%' ORDER BY id LIMIT $maxRecords";
 
     $result=mysqli_query($connection,$query);
     if (!$result) {

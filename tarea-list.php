@@ -7,7 +7,7 @@
   if ($page < 1) $page = 1;
   
   // Calcular OFFSET (desplazamiento).
-  $recordsPerPage = 25;
+  $recordsPerPage = 15;
   $offset = ($page - 1) * $recordsPerPage;
   
   // Contar total de registros.
