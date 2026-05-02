@@ -3,6 +3,9 @@ $(document).ready(function()
   // Comienza el cuerpo de ready...
   console.log('JQuerry is working');
   let edit = false;
+  // Variables para paginación.
+  let currentPage = 1;
+  let totalPages = 1;
   
   $('#tarea-result').hide();
   TraerTareas();
@@ -90,10 +93,32 @@ $(document).ready(function()
   function TraerTareas(){
     $.ajax({
       url:'tarea-list.php',
-      type: 'GET',
+      // Camnbiar tipo de petición y enviar página actual.
+      type: 'POST',
+      data: {page: currentPage},
       success: function (response){
-        //console.log(response);
-        let tasks = JSON.parse(response);
+        // Procesar respuesta con metadatos.
+        let data = JSON.parse(response);
+        let tasks = data.registros;
+        totalPages = data.totalPages;
+        
+        // Actualizar mostrador de página dinámicamente.
+        $('#page').html(`<center><button id="prev-page">Anterior</button> Pag. ${data.currentPage}/${data.totalPages} <button id="next-page">Siguiente</button></center>`);
+        
+        // Deshabilitar botón anterior si estamos en página 1
+        if (data.currentPage === 1) {
+          $('#prev-page').prop('disabled', true);
+        } else {
+          $('#prev-page').prop('disabled', false);
+        }
+        
+        // Deshabilitar botón siguiente si estamos en última página
+        if (data.currentPage === data.totalPages) {
+          $('#next-page').prop('disabled', true);
+        } else {
+          $('#next-page').prop('disabled', false);
+        }
+        
         let template = '';
         tasks.forEach(task => {
           template +=`
@@ -117,5 +142,20 @@ $(document).ready(function()
     })
   }
   // Aqui termina la funcion TraerTareas() ///////////////////
+  
+  // Manejadores de paginación
+  $(document).on('click', '#prev-page', function() {
+    if (currentPage > 1) {
+      currentPage--;
+      TraerTareas();
+    }
+  });
+  
+  $(document).on('click', '#next-page', function() {
+    if (currentPage < totalPages) {
+      currentPage++;
+      TraerTareas();
+    }
+  });
   
 }); // Termina el cuerpo de ready...
