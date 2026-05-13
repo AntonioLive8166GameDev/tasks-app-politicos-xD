@@ -42,6 +42,7 @@ $(document).ready(function()
     }
   })
   
+  // Agregar o editar tareas.
   $('#tareas-forma').submit(function(e){
     const postData = {
       id: $('#tareaId').val(),
