@@ -26,7 +26,7 @@ $(document).ready(function()
           tasks.forEach(
             task => {template += `
               <tr tareaId="${task.id}">
-                <td >${task.id}</td>
+                <td class="id">${task.id}</td>
                 <td>${task.appat}</td>
                 <td>${task.apmat}</td>
                 <td><a href='#' class="task-item">${task.nombre}</a></td>
@@ -126,7 +126,7 @@ $(document).ready(function()
         tasks.forEach(task => {
           template +=`
             <tr tareaId="${task.id}">
-              <td >${task.id}</td>
+              <td class="id">${task.id}</td>
               <td>${task.entidad}</td>
               <td>${task.appat}</td>
               <td>${task.apmat}</td>
